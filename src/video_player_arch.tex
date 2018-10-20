@@ -1,12 +1,20 @@
 \section{Arquitetura}
 
 %% - Poderíamos separar em duas camadas: Plataforma e Renderização.
-%% - Na questão de Plataforma, descrevemos um pouco o lado do Android de consumo de mídias (Uso do MediaPlayer, MediaCodec, uso do OpenGL, tipos de textura, ….), interação com o Unity via plugins
-%% - Na Renderização podemos explorar diferentes formas de visualização do video (em um Quad, numa esfera em 360, em um grid de voxels), descrever shaders
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Buscando a implementação otimizada de um Video Player para plataformas de Realidade Virtual móveis, dividimos nossa arquitetura em duas camadas principais:
+
+\begin{enumerate}
+    \item Camada de plataforma: implementação nativa para lidar com operações de I/O para consumo e descompressão de mídias.
+    \item Camada de renderização: uso de algum framework de renderização para tornar vísivel dentro de um universo virtual 3D o conteúdo extraído da mídia.
+\end{enumerate}
+
+\subsection{Camada de Plataforma}
+
+%% - Na questão de Plataforma, descrevemos um pouco o lado do Android de consumo de mídias (Uso do MediaPlayer, MediaCodec, uso do OpenGL, tipos de textura, ….), interação com o Unity via plugins
+
+A camada de plataforma é responsável pelo consumo de mídias, alocação e gerenciamento de memória para armazenar o conteúdo descomprimido, lidar com operações de I/O.
+
+\subsection{Camada de Renderização}
+
+%% - Na Renderização podemos explorar diferentes formas de visualização do video (em um Quad, numa esfera em 360, em um grid de voxels), descrever shaders
