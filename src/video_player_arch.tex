@@ -1,4 +1,4 @@
-\section{Arquitetura}
+\section{Arquitetura} \label{sec-videoplayer-arch}
 
 %% - Poderíamos separar em duas camadas: Plataforma e Renderização.
 
@@ -9,12 +9,32 @@ Buscando a implementação otimizada de um Video Player para plataformas de Real
     \item Camada de renderização: uso de algum framework de renderização para tornar vísivel dentro de um universo virtual 3D o conteúdo extraído da mídia.
 \end{enumerate}
 
-\subsection{Camada de Plataforma}
+Assim, de acordo com a camada de plataforma, diferentes formatos podem ser suportados, e renderizados de diferentes maneiras na camada de renderização. Por exemplo, um arquivo de video 2000x1000 pode ser visualizado como um video 360 distribuido no entorno do usuário poderia na verdade permitir uma resolução horizontal de cerca de 555 pixels dado um \textit{FOV} de 100 graus. A relação entre a resolução do conteúdo, o campo de visão (\textit{FOV}), e quantidade real de pixels disponibilizados é discutida na subseção \ref{sec-arch-subsec-render-layer}.
+
+Nas subseções a seguir são descritas como as influências da plataforma no consumo do vídeo (subseção \ref{sec-arch-subsec-platform-layer}) e citar algumas possibilidade de renderização permitadas na realidade virtual e aumentada em dispositivos móveis (subseção \ref{sec-arch-subsec-render-layer}).
+
+\subsection{Camada de Plataforma} \label{sec-arch-subsec-platform-layer}
 
 %% - Na questão de Plataforma, descrevemos um pouco o lado do Android de consumo de mídias (Uso do MediaPlayer, MediaCodec, uso do OpenGL, tipos de textura, ….), interação com o Unity via plugins
 
 A camada de plataforma é responsável pelo consumo de mídias, alocação e gerenciamento de memória para armazenar o conteúdo descomprimido, lidar com operações de I/O.
 
-\subsection{Camada de Renderização}
+\subsection{Camada de Renderização} \label{sec-arch-subsec-render-layer}
 
-%% - Na Renderização podemos explorar diferentes formas de visualização do video (em um Quad, numa esfera em 360, em um grid de voxels), descrever shaders
+A camada de renderização é responsável explorar diferentes formas de visualização do video, seja em um plano, numa esfera em 360, em um grid de voxels, utilizando os mais diversos shaders...
+
+%% - Na Renderização podemos
+
+\subsubsection{Renderização de Vídeo usando Unity}
+
+%% - Mencionar StateMachines
+
+Unity é...
+
+
+\subsubsection{Renderização de Vídeo usando GVRF}
+
+% TO REPHRASE
+\textit{GearVR framework} (GVRf) é fornecido como uma biblioteca de APIs para renderização de aplicações VR/AR/MR. Sua sintaxe de código traça similaridades com as \textit{APIs} de motores gráficos de jogos, por exemplo, fornecendo uma \textit{pipeline} conhecida a maioria dos desenvolvedores de jogos: e.g, objetos do mundo 3D se organizam em cenas e também podem ter suas visualizações configuradas por materiais, estes que podem possuir seus próprios \textit{shaders}, código destinados a GPU com instruções para a renderização de cada pixel pertecente ao objeto alvo.
+
+
